@@ -1,60 +1,53 @@
-# 📸 PHOTO BOGOTÁ
+# PHOTO BOGOTA
 
-<div align="center">
-
-✨ **Descubre los lugares más fotogénicos de Bogotá** ✨  
-
-</div>
+**Descubre los lugares mas fotogenicos de Bogota**
 
 ---
 
-## 📖 Descripción
+## Descripcion
 
-**PHOTO BOGOTÁ** es una plataforma colaborativa que conecta fotógrafos con los lugares más visualmente atractivos de Bogotá.  
-Nuestra misión es **democratizar el conocimiento** sobre ubicaciones únicas y crear una **comunidad vibrante** de creadores visuales.  
-
----
-
-## 🎯 Problema que Resolvemos
-
-- Desconocimiento de ubicaciones fotográficas únicas en Bogotá  
-- Información dispersa sobre lugares de interés visual  
-- Falta de comunidad entre fotógrafos locales  
-- Experiencias repetitivas en los mismos lugares turísticos  
+**PHOTO BOGOTA** es una plataforma colaborativa que conecta fotografia con los lugares mas visualmente atractivos de Bogota.  
+Nuestra mision es **democratizar el conocimiento** sobre ubicaciones unicas y crear una **comunidad vibrante** de creadores visuales.
 
 ---
 
-## 🌟 Nuestra Solución
+## Problema que Resolvemos
 
-Una **app intuitiva** que permite:  
-
-✅ Descubrir nuevos spots fotográficos  
-✅ Explorar experiencias únicas en la ciudad  
-✅ Compartir tus propios hallazgos con la comunidad  
-
----
-
-## 📂 Contenido del Repositorio
-
-En este repositorio encontrarás:  
-
-- 📄 **Documentación del proyecto**  
-- 🎭 **Diagrama de Casos de Uso**  
-- 🔄 **BPMN del flujo principal**  
+- Desconocimiento de ubicaciones fotograficas unicas en Bogota
+- Informacion dispersa sobre lugares de interes visual
+- Falta de comunidad entre fotografias locales
+- Experiencias repetitivas en los mismos lugares turisticos
 
 ---
 
-## 🚀 Roadmap
+## Nuestra Solucion
 
-- ✅ Reestructuración y mejora del **README**  
-- ✅ Ampliación de la descripción del proyecto  
+Una **app intuitiva** que permite:
+
+- Descubrir nuevos spots fotograficos
+- Explorar experiencias unicas en la ciudad
+- Compartir tus propios hallazgos con la comunidad
 
 ---
 
-<div align="center">
+## Contenido del Repositorio
 
-**¡Hecho con ❤️ para la comunidad fotográfica de Bogotá!**  
+En este repositorio encontraras:
 
-[⬆️ Volver arriba](#-photo-bogotá)
+- Documentacion del proyecto
+- Diagrama de Casos de Uso
+- Modelo de clases en Java
+- Diagramas BPMN
 
-</div>
+---
+
+## Roadmap
+
+- Reestructuracion y mejora del **README**
+- Ampliacion de la descripcion del proyecto
+
+---
+
+**Hecho con amor para la comunidad fotografica de Bogota!**
+
+[Volver arriba](#photo-bogota)
