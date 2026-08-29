@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
   <hashTree>
-    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="PLAN DE PRUEBAS USUARIOS PHOTOBOGOTA" enabled="true">
-      <stringProp name="TestPlan.comments">Pruebas de carga unificadas: Spots y Modulo de Usuarios</stringProp>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="PLAN DE PRUEBAS MODERADOR PHOTOBOGOTA" enabled="true">
+      <stringProp name="TestPlan.comments">Pruebas de carga para el módulo de Moderador (Localidades y Categorías)</stringProp>
       <boolProp name="TestPlan.functional_mode">false</boolProp>
       <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
         <collectionProp name="Arguments.arguments">
-          <elementProp name="spot_id" elementType="Argument">
-            <stringProp name="Argument.name">spot_id</stringProp>
+          <elementProp name="localidad_id" elementType="Argument">
+            <stringProp name="Argument.name">localidad_id</stringProp>
             <stringProp name="Argument.value">1</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="nombre_usuario" elementType="Argument">
-            <stringProp name="Argument.name">nombre_usuario</stringProp>
-            <stringProp name="Argument.value">sebas.jsx</stringProp>
+          <elementProp name="categoria_id" elementType="Argument">
+            <stringProp name="Argument.name">categoria_id</stringProp>
+            <stringProp name="Argument.value">1</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -30,7 +30,7 @@
         <stringProp name="HTTPSampler.implementation"></stringProp>
       </ConfigTestElement>
       <hashTree/>
-      <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager Global">
+      <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager Global" enabled="true">
         <collectionProp name="HeaderManager.headers">
           <elementProp name="" elementType="Header">
             <stringProp name="Header.name">Content-Type</stringProp>
@@ -47,7 +47,7 @@
         </collectionProp>
       </HeaderManager>
       <hashTree/>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Pruebas de Usuarios">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Pruebas de Moderador">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -58,7 +58,7 @@
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST LOGIN" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="LOGIN">
           <stringProp name="HTTPSampler.path">/api/v1/auth/login</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
@@ -67,8 +67,8 @@
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-	&quot;login&quot; : &quot;Danfel7&quot;,&#xd;
-	&quot;contrasena&quot; : &quot;Sergiogeien4.&quot;&#xd;
+	&quot;login&quot; : &quot;sebas.jsx&quot;,&#xd;
+	&quot;contrasena&quot; : &quot;Sergiogeien4&quot;&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
@@ -76,7 +76,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor Token" enabled="true">
             <stringProp name="JSONPostProcessor.referenceNames">jwt_token</stringProp>
             <stringProp name="JSONPostProcessor.jsonPathExprs">$.token</stringProp>
             <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
@@ -84,8 +84,8 @@
           </JSONPostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="LISTAR SPOTS" enabled="true">
-          <stringProp name="HTTPSampler.path">api/v1/spots/6a90dc53866040fc6819f8b0</stringProp>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="LISTAR LOCALIDADES TODAS">
+          <stringProp name="HTTPSampler.path">/api/v1/moderador/localidades</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
@@ -93,8 +93,8 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="MIS SPOTS" enabled="true">
-          <stringProp name="HTTPSampler.path">/api/v1/usuarios/me/spots</stringProp>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="LISTAR LOCALIDADES ACTIVAS">
+          <stringProp name="HTTPSampler.path">/api/v1/moderador/localidades/activas</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
@@ -102,43 +102,8 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="MIS RESENAS" enabled="true">
-          <stringProp name="HTTPSampler.path">/api/v1/usuarios/me/resenas</stringProp>
-          <stringProp name="HTTPSampler.method">GET</stringProp>
-          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
-            <collectionProp name="Arguments.arguments"/>
-          </elementProp>
-        </HTTPSamplerProxy>
-        <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="MIS GUARDADOS" enabled="true">
-          <stringProp name="HTTPSampler.path">/api/v1/usuarios/me/guardados</stringProp>
-          <stringProp name="HTTPSampler.method">GET</stringProp>
-          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
-            <collectionProp name="Arguments.arguments"/>
-          </elementProp>
-        </HTTPSamplerProxy>
-        <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="EDITAR MI PERFIL" enabled="true">
-          <stringProp name="HTTPSampler.path">/api/v1/usuarios/perfil</stringProp>
-          <stringProp name="HTTPSampler.method">PUT</stringProp>
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&#xd;
-	&quot;nombre&quot;: &quot;Sebas Updated&quot;&#xd;
-}</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-            </collectionProp>
-          </elementProp>
-        </HTTPSamplerProxy>
-        <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GUARDAR SPOT" enabled="true">
-          <stringProp name="HTTPSampler.path">/api/v1/usuarios/me/guardados/6a90dc53866040fc6819f8b0</stringProp>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="CREAR LOCALIDAD">
+          <stringProp name="HTTPSampler.path">/api/v1/moderador/localidades</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
@@ -146,27 +111,10 @@
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-  &quot;nombre&quot;: &quot;Parque Simón Bolívar&quot;,&#xd;
-  &quot;latitud&quot;: 3.8667,&#xd;
-  &quot;longitud&quot;: -73.05,&#xd;
-  &quot;direccion&quot;: &quot;Calle 63 #68-95, Bogotá&quot;,&#xd;
-  &quot;categoria&quot;: &quot;Parque&quot;,&#xd;
-  &quot;localidad&quot;: &quot;Kennedy&quot;,&#xd;
-  &quot;descripcion&quot;: &quot;Parque ubicado en el corazón de Bogotá&quot;,&#xd;
-  &quot;recomendacion&quot;: &quot;Ideal para fotos de paisaje al atardecer&quot;,&#xd;
-  &quot;tipsFoto&quot;: &quot;Evitar la luz directa del sol&quot;,&#xd;
-  &quot;tipo&quot;: &quot;SPOT&quot;,&#xd;
-  &quot;telefono&quot;: &quot;3001234567&quot;,&#xd;
-  &quot;horario&quot;: &quot;6:00 AM - 6:00 PM&quot;,&#xd;
-  &quot;sitioWeb&quot;: &quot;www.parquesimonbolivar.com&quot;,&#xd;
-  &quot;tienePromocion&quot;: true,&#xd;
-  &quot;imagenes&quot;: [&#xd;
-    &quot;/images/spot1.jpg&quot;,&#xd;
-    &quot;/images/spot2.jpg&quot;&#xd;
-  ],&#xd;
-  &quot;imagen&quot;: &quot;/images/spot1.jpg&quot;,&#xd;
-  &quot;creadorUsername&quot;: &quot;Danfel7&quot;,&#xd;
-  &quot;usuarioId&quot;: &quot;Danfel7&quot;&#xd;
+  &quot;nombre&quot;: &quot;La casa de Yanpol 1&quot;,&#xd;
+  &quot;descripcion&quot;: &quot;Casa en el barrio Kennedy&quot;,&#xd;
+  &quot;imagen&quot;: &quot;/localidades/casa.jpg&quot;,&#xd;
+  &quot;activo&quot;: true&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
@@ -174,8 +122,46 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="QUITAR SPOT GUARDADO" enabled="true">
-          <stringProp name="HTTPSampler.path">/api/v1/usuarios/me/guardados/6a90dc53866040fc6819f8b0</stringProp>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="CONSULTAR LOCALIDAD POR ID">
+          <stringProp name="HTTPSampler.path">/api/v1/moderador/localidades/6a90dbc8866040fc6819f8ad</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ACTUALIZAR LOCALIDAD">
+          <stringProp name="HTTPSampler.path">/api/v1/moderador/localidades/6a90dbc8866040fc6819f8ad</stringProp>
+          <stringProp name="HTTPSampler.method">PUT</stringProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+  &quot;nombre&quot;: &quot;La casa de Yanpol 1&quot;,&#xd;
+  &quot;descripcion&quot;: &quot;Casa en el barrio Kennedy por los lados de banderas&quot;,&#xd;
+  &quot;imagen&quot;: &quot;/localidades/casa.jpg&quot;,&#xd;
+  &quot;activo&quot;: true&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ACTIVAR/DESACTIVAR LOCALIDAD">
+          <stringProp name="HTTPSampler.path">/api/v1/moderador/localidades/6a90dbc8866040fc6819f8ad/toggle</stringProp>
+          <stringProp name="HTTPSampler.method">PATCH</stringProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ELIMINAR LOCALIDAD" enabled="false">
+          <stringProp name="HTTPSampler.path">/api/v1/moderador/localidades/6a90dbc8866040fc6819f8ad</stringProp>
           <stringProp name="HTTPSampler.method">DELETE</stringProp>
           <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
@@ -183,8 +169,8 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PERFIL PUBLICO USUARIO" enabled="true">
-          <stringProp name="HTTPSampler.path">/api/v1/usuarios/perfil/Yanpol7</stringProp>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="LISTAR CATEGORIAS TODAS">
+          <stringProp name="HTTPSampler.path">/api/v1/moderador/categorias</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
@@ -192,8 +178,8 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="SPOTS DE UN USUARIO" enabled="true">
-          <stringProp name="HTTPSampler.path">/api/v1/usuarios/Yanpol7/spots</stringProp>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="LISTAR CATEGORIAS ACTIVAS">
+          <stringProp name="HTTPSampler.path">/api/v1/moderador/categorias/activas</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
@@ -201,27 +187,19 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="RESENAS DE UN USUARIO" enabled="true">
-          <stringProp name="HTTPSampler.path">/api/v1/usuarios/Yanpol7/resenas</stringProp>
-          <stringProp name="HTTPSampler.method">GET</stringProp>
-          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
-            <collectionProp name="Arguments.arguments"/>
-          </elementProp>
-        </HTTPSamplerProxy>
-        <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="CAMBIAR CONTRASENA" enabled="true">
-          <stringProp name="HTTPSampler.path">/api/v1/usuarios/me/password</stringProp>
-          <stringProp name="HTTPSampler.method">PATCH</stringProp>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="CREAR CATEGORIA">
+          <stringProp name="HTTPSampler.path">/api/v1/moderador/categorias</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-  &quot;contrasenaActual&quot;: &quot;Sergiogeien4.&quot;,&#xd;
-  &quot;nuevaContrasena&quot;: &quot;Sergiogeien4&quot;,&#xd;
-  &quot;confirmarContrasena&quot;: &quot;Sergiogeien4&quot;&#xd;
+  &quot;nombre&quot;: &quot;Fotografía de paisaje 1&quot;,&#xd;
+  &quot;descripcion&quot;: &quot;Fotografías que capturan los paisajes más bonitos de Bogotá&quot;,&#xd;
+  &quot;imagen&quot;: &quot;/categorias/imagen-categoria.jpg&quot;,&#xd;
+  &quot;activo&quot;: true&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
@@ -229,8 +207,8 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ESTADO SOLICITUD ELIMINACION" enabled="true">
-          <stringProp name="HTTPSampler.path">/api/v1/usuarios/me/eliminacion/estado</stringProp>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="CONSULTAR CATEGORIA POR ID">
+          <stringProp name="HTTPSampler.path">/api/v1/moderador/categorias/6a90dbb7866040fc6819f8ac</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
@@ -238,7 +216,45 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ACTUALIZAR CATEGORIA">
+          <stringProp name="HTTPSampler.path">/api/v1/moderador/categorias/6a90dbb7866040fc6819f8ac</stringProp>
+          <stringProp name="HTTPSampler.method">PUT</stringProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+  &quot;nombre&quot;: &quot;Fotografía de paisaje 1&quot;,&#xd;
+  &quot;descripcion&quot;: &quot;Fotografías que capturan los paisajes más bonitos de Bogotácito city&quot;,&#xd;
+  &quot;imagen&quot;: &quot;/categorias/imagen-categoria.jpg&quot;,&#xd;
+  &quot;activo&quot;: true&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ACTIVAR/DESACTIVAR CATEGORIA">
+          <stringProp name="HTTPSampler.path">/api/v1/moderador/categorias/6a90dbb7866040fc6819f8ac/toggle</stringProp>
+          <stringProp name="HTTPSampler.method">PATCH</stringProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ELIMINAR CATEGORIA" enabled="false">
+          <stringProp name="HTTPSampler.path">/api/v1/moderador/categorias/6a90dbb7866040fc6819f8ac</stringProp>
+          <stringProp name="HTTPSampler.method">DELETE</stringProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -275,7 +291,7 @@
           <stringProp name="filename"></stringProp>
         </ResultCollector>
         <hashTree/>
-        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
