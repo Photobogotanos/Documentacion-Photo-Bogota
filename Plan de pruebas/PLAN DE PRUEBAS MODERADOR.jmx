@@ -84,7 +84,7 @@
           </JSONPostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="LISTAR LOCALIDADES TODAS">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="LISTAR LOCALIDADES TODAS" enabled="true">
           <stringProp name="HTTPSampler.path">/api/v1/moderador/localidades</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
@@ -111,7 +111,7 @@
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-  &quot;nombre&quot;: &quot;La casa de Yanpol 1&quot;,&#xd;
+  &quot;nombre&quot;: &quot;La casa de Yanpol 2&quot;,&#xd;
   &quot;descripcion&quot;: &quot;Casa en el barrio Kennedy&quot;,&#xd;
   &quot;imagen&quot;: &quot;/localidades/casa.jpg&quot;,&#xd;
   &quot;activo&quot;: true&#xd;
@@ -122,7 +122,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="CONSULTAR LOCALIDAD POR ID">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="CONSULTAR LOCALIDAD POR ID" enabled="true">
           <stringProp name="HTTPSampler.path">/api/v1/moderador/localidades/6a90dbc8866040fc6819f8ad</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
@@ -140,7 +140,7 @@
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-  &quot;nombre&quot;: &quot;La casa de Yanpol 1&quot;,&#xd;
+  &quot;nombre&quot;: &quot;La casa de Yanpol 2&quot;,&#xd;
   &quot;descripcion&quot;: &quot;Casa en el barrio Kennedy por los lados de banderas&quot;,&#xd;
   &quot;imagen&quot;: &quot;/localidades/casa.jpg&quot;,&#xd;
   &quot;activo&quot;: true&#xd;
@@ -169,7 +169,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="LISTAR CATEGORIAS TODAS">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="LISTAR CATEGORIAS TODAS" enabled="true">
           <stringProp name="HTTPSampler.path">/api/v1/moderador/categorias</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
@@ -196,7 +196,7 @@
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-  &quot;nombre&quot;: &quot;Fotografía de paisaje 1&quot;,&#xd;
+  &quot;nombre&quot;: &quot;Fotografía de paisaje 2&quot;,&#xd;
   &quot;descripcion&quot;: &quot;Fotografías que capturan los paisajes más bonitos de Bogotá&quot;,&#xd;
   &quot;imagen&quot;: &quot;/categorias/imagen-categoria.jpg&quot;,&#xd;
   &quot;activo&quot;: true&#xd;
@@ -207,7 +207,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="CONSULTAR CATEGORIA POR ID">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="CONSULTAR CATEGORIA POR ID" enabled="true">
           <stringProp name="HTTPSampler.path">/api/v1/moderador/categorias/6a90dbb7866040fc6819f8ac</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
@@ -225,7 +225,7 @@
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-  &quot;nombre&quot;: &quot;Fotografía de paisaje 1&quot;,&#xd;
+  &quot;nombre&quot;: &quot;Fotografía de paisaje 2&quot;,&#xd;
   &quot;descripcion&quot;: &quot;Fotografías que capturan los paisajes más bonitos de Bogotácito city&quot;,&#xd;
   &quot;imagen&quot;: &quot;/categorias/imagen-categoria.jpg&quot;,&#xd;
   &quot;activo&quot;: true&#xd;
@@ -236,7 +236,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ACTIVAR/DESACTIVAR CATEGORIA">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ACTIVAR/DESACTIVAR CATEGORIA" enabled="true">
           <stringProp name="HTTPSampler.path">/api/v1/moderador/categorias/6a90dbb7866040fc6819f8ac/toggle</stringProp>
           <stringProp name="HTTPSampler.method">PATCH</stringProp>
           <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
