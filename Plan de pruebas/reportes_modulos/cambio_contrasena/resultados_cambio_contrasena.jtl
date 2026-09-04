@@ -1,0 +1,46 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1788561131475,691,POST LOGIN - fase 1,200,OK,Pruebas de Usuarios fase 1 1-1,text,true,,1422,315,1,2,https://photoapi.duckdns.org/api/v1/auth/login,685,0,488
+1788561131475,728,POST LOGIN - fase 2,200,OK,Pruebas Usuarios fase 2 2-1,text,true,,1422,316,1,2,https://photoapi.duckdns.org/api/v1/auth/login,728,0,488
+1788561132204,520,CAMBIAR CONTRASENA - fase 2,200,OK,Pruebas Usuarios fase 2 2-1,text,true,,530,640,1,2,https://photoapi.duckdns.org/api/v1/usuarios/me/password,519,0,151
+1788561132189,539,CAMBIAR CONTRASENA - fase 1,200,OK,Pruebas de Usuarios fase 1 1-1,text,true,,530,639,1,2,https://photoapi.duckdns.org/api/v1/usuarios/me/password,539,0,174
+1788561132729,551,RESTAURAR CONTRASEÑA - fase 1 ,200,OK,Pruebas de Usuarios fase 1 1-1,text,true,,530,639,1,2,https://photoapi.duckdns.org/api/v1/usuarios/me/password,551,0,169
+1788561132725,555,RESTAURAR CONTRASEÑA - fase 2,200,OK,Pruebas Usuarios fase 2 2-1,text,true,,530,639,1,2,https://photoapi.duckdns.org/api/v1/usuarios/me/password,555,0,172
+1788561133281,345,POST LOGIN - fase 1,200,OK,Pruebas de Usuarios fase 1 1-1,text,true,,1422,562,1,2,https://photoapi.duckdns.org/api/v1/auth/login,345,0,159
+1788561133281,358,POST LOGIN - fase 2,200,OK,Pruebas Usuarios fase 2 2-1,text,true,,1422,563,1,2,https://photoapi.duckdns.org/api/v1/auth/login,357,0,164
+1788561133627,546,CAMBIAR CONTRASENA - fase 1,200,OK,Pruebas de Usuarios fase 1 1-1,text,true,,530,640,1,2,https://photoapi.duckdns.org/api/v1/usuarios/me/password,545,0,162
+1788561133640,539,CAMBIAR CONTRASENA - fase 2,200,OK,Pruebas Usuarios fase 2 2-1,text,true,,530,640,1,2,https://photoapi.duckdns.org/api/v1/usuarios/me/password,539,0,161
+1788561134173,538,RESTAURAR CONTRASEÑA - fase 1 ,200,OK,Pruebas de Usuarios fase 1 1-1,text,true,,530,640,1,2,https://photoapi.duckdns.org/api/v1/usuarios/me/password,537,0,164
+1788561134180,533,RESTAURAR CONTRASEÑA - fase 2,200,OK,Pruebas Usuarios fase 2 2-1,text,true,,530,640,1,2,https://photoapi.duckdns.org/api/v1/usuarios/me/password,532,0,157
+1788561134711,351,POST LOGIN - fase 1,200,OK,Pruebas de Usuarios fase 1 1-1,text,true,,1422,564,1,2,https://photoapi.duckdns.org/api/v1/auth/login,350,0,161
+1788561134713,355,POST LOGIN - fase 2,200,OK,Pruebas Usuarios fase 2 2-1,text,true,,1422,562,1,2,https://photoapi.duckdns.org/api/v1/auth/login,355,0,160
+1788561135069,538,CAMBIAR CONTRASENA - fase 2,200,OK,Pruebas Usuarios fase 2 2-1,text,true,,530,641,1,2,https://photoapi.duckdns.org/api/v1/usuarios/me/password,538,0,162
+1788561135062,545,CAMBIAR CONTRASENA - fase 1,200,OK,Pruebas de Usuarios fase 1 1-1,text,true,,530,640,1,2,https://photoapi.duckdns.org/api/v1/usuarios/me/password,545,0,169
+1788561135608,554,RESTAURAR CONTRASEÑA - fase 1 ,200,OK,Pruebas de Usuarios fase 1 1-1,text,true,,530,639,1,2,https://photoapi.duckdns.org/api/v1/usuarios/me/password,553,0,170
+1788561135608,555,RESTAURAR CONTRASEÑA - fase 2,200,OK,Pruebas Usuarios fase 2 2-1,text,true,,530,638,1,2,https://photoapi.duckdns.org/api/v1/usuarios/me/password,555,0,170
+1788561136163,310,POST LOGIN - fase 1,200,OK,Pruebas de Usuarios fase 1 1-1,text,true,,1422,562,1,2,https://photoapi.duckdns.org/api/v1/auth/login,309,0,141
+1788561136163,343,POST LOGIN - fase 2,200,OK,Pruebas Usuarios fase 2 2-1,text,true,,1422,562,1,2,https://photoapi.duckdns.org/api/v1/auth/login,343,0,159
+1788561136474,518,CAMBIAR CONTRASENA - fase 1,200,OK,Pruebas de Usuarios fase 1 1-1,text,true,,530,639,1,2,https://photoapi.duckdns.org/api/v1/usuarios/me/password,517,0,152
+1788561136507,529,CAMBIAR CONTRASENA - fase 2,200,OK,Pruebas Usuarios fase 2 2-1,text,true,,530,639,1,2,https://photoapi.duckdns.org/api/v1/usuarios/me/password,528,0,164
+1788561136992,539,RESTAURAR CONTRASEÑA - fase 1 ,200,OK,Pruebas de Usuarios fase 1 1-1,text,true,,530,640,1,2,https://photoapi.duckdns.org/api/v1/usuarios/me/password,538,0,159
+1788561137036,519,RESTAURAR CONTRASEÑA - fase 2,200,OK,Pruebas Usuarios fase 2 2-1,text,true,,530,638,1,2,https://photoapi.duckdns.org/api/v1/usuarios/me/password,518,0,158
+1788561137532,338,POST LOGIN - fase 1,200,OK,Pruebas de Usuarios fase 1 1-1,text,true,,1422,563,1,2,https://photoapi.duckdns.org/api/v1/auth/login,338,0,156
+1788561137556,330,POST LOGIN - fase 2,200,OK,Pruebas Usuarios fase 2 2-1,text,true,,1422,561,1,2,https://photoapi.duckdns.org/api/v1/auth/login,329,0,146
+1788561137886,525,CAMBIAR CONTRASENA - fase 2,200,OK,Pruebas Usuarios fase 2 2-1,text,true,,530,641,1,2,https://photoapi.duckdns.org/api/v1/usuarios/me/password,525,0,154
+1788561137872,539,CAMBIAR CONTRASENA - fase 1,200,OK,Pruebas de Usuarios fase 1 1-1,text,true,,530,641,1,2,https://photoapi.duckdns.org/api/v1/usuarios/me/password,539,0,160
+1788561138412,523,RESTAURAR CONTRASEÑA - fase 1 ,200,OK,Pruebas de Usuarios fase 1 1-1,text,true,,530,637,1,2,https://photoapi.duckdns.org/api/v1/usuarios/me/password,522,0,152
+1788561138412,523,RESTAURAR CONTRASEÑA - fase 2,200,OK,Pruebas Usuarios fase 2 2-1,text,true,,530,637,1,2,https://photoapi.duckdns.org/api/v1/usuarios/me/password,523,0,157
+1788561138936,332,POST LOGIN - fase 2,200,OK,Pruebas Usuarios fase 2 2-1,text,true,,1422,563,1,1,https://photoapi.duckdns.org/api/v1/auth/login,332,0,158
+1788561139269,476,CAMBIAR CONTRASENA - fase 2,200,OK,Pruebas Usuarios fase 2 2-1,text,true,,530,640,1,1,https://photoapi.duckdns.org/api/v1/usuarios/me/password,476,0,154
+1788561139746,495,RESTAURAR CONTRASEÑA - fase 2,200,OK,Pruebas Usuarios fase 2 2-1,text,true,,530,640,1,1,https://photoapi.duckdns.org/api/v1/usuarios/me/password,494,0,165
+1788561140241,344,POST LOGIN - fase 2,200,OK,Pruebas Usuarios fase 2 2-1,text,true,,1422,559,1,1,https://photoapi.duckdns.org/api/v1/auth/login,344,0,162
+1788561140586,467,CAMBIAR CONTRASENA - fase 2,200,OK,Pruebas Usuarios fase 2 2-1,text,true,,530,638,1,1,https://photoapi.duckdns.org/api/v1/usuarios/me/password,466,0,137
+1788561141053,472,RESTAURAR CONTRASEÑA - fase 2,200,OK,Pruebas Usuarios fase 2 2-1,text,true,,530,639,1,1,https://photoapi.duckdns.org/api/v1/usuarios/me/password,472,0,151
+1788561141526,322,POST LOGIN - fase 2,200,OK,Pruebas Usuarios fase 2 2-1,text,true,,1422,561,1,1,https://photoapi.duckdns.org/api/v1/auth/login,322,0,154
+1788561141849,491,CAMBIAR CONTRASENA - fase 2,200,OK,Pruebas Usuarios fase 2 2-1,text,true,,530,639,1,1,https://photoapi.duckdns.org/api/v1/usuarios/me/password,490,0,157
+1788561142341,461,RESTAURAR CONTRASEÑA - fase 2,200,OK,Pruebas Usuarios fase 2 2-1,text,true,,530,637,1,1,https://photoapi.duckdns.org/api/v1/usuarios/me/password,461,0,141
+1788561142803,331,POST LOGIN - fase 2,200,OK,Pruebas Usuarios fase 2 2-1,text,true,,1422,564,1,1,https://photoapi.duckdns.org/api/v1/auth/login,330,0,152
+1788561143136,484,CAMBIAR CONTRASENA - fase 2,200,OK,Pruebas Usuarios fase 2 2-1,text,true,,530,639,1,1,https://photoapi.duckdns.org/api/v1/usuarios/me/password,483,0,155
+1788561143621,474,RESTAURAR CONTRASEÑA - fase 2,200,OK,Pruebas Usuarios fase 2 2-1,text,true,,530,638,1,1,https://photoapi.duckdns.org/api/v1/usuarios/me/password,473,0,152
+1788561144095,318,POST LOGIN - fase 2,200,OK,Pruebas Usuarios fase 2 2-1,text,true,,1422,563,1,1,https://photoapi.duckdns.org/api/v1/auth/login,317,0,148
+1788561144413,509,CAMBIAR CONTRASENA - fase 2,200,OK,Pruebas Usuarios fase 2 2-1,text,true,,530,639,1,1,https://photoapi.duckdns.org/api/v1/usuarios/me/password,509,0,172
+1788561144923,489,RESTAURAR CONTRASEÑA - fase 2,200,OK,Pruebas Usuarios fase 2 2-1,text,true,,530,639,1,1,https://photoapi.duckdns.org/api/v1/usuarios/me/password,488,0,155
